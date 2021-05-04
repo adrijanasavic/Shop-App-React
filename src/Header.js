@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./css/Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Gallery from './Gallery'
 export default class Header extends Component {
   constructor() {
     super();
@@ -12,7 +13,8 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <Router>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand txt-info" href="#">
             Shop App
@@ -34,22 +36,22 @@ export default class Header extends Component {
           >
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="/">
                   Home
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Gallery
+                <a class="nav-link" href="/gallery">
+                Gallery                
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/aboutus">
                   About Us
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/contactus">
                   Contact Us
                 </a>
               </li>
@@ -57,6 +59,7 @@ export default class Header extends Component {
           </div>
         </div>
       </nav>
+      </Router>
     );
   }
 }
